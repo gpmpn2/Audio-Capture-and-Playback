@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,21 +39,59 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bc6-x7-5Ls">
+                                <rect key="frame" x="0.0" y="369" width="375" height="298"/>
+                            </pickerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugB-Pm-QMy">
+                                <rect key="frame" x="0.0" y="351" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="fNK-MX-Jds">
+                                        <connections>
+                                            <action selector="cancelSettings:" destination="BYZ-38-t0r" id="bAB-5O-x0Y"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="lN1-Gx-Lfx"/>
+                                    <barButtonItem title="Done" id="fx7-h1-n8f">
+                                        <connections>
+                                            <action selector="setSettings:" destination="BYZ-38-t0r" id="GSd-PE-ppK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7En-KI-7CV">
+                                <rect key="frame" x="100" y="395" width="175" height="30"/>
+                                <state key="normal" title="Select Recording Options"/>
+                                <connections>
+                                    <action selector="openSettings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ScE-Eo-6zw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="7En-KI-7CV" firstAttribute="top" secondItem="tpO-5w-5C4" secondAttribute="bottom" constant="41" id="6BH-Vv-hwI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1NH-li-fQB" secondAttribute="trailing" id="9TI-Rk-c7l"/>
+                            <constraint firstItem="7En-KI-7CV" firstAttribute="top" secondItem="ugB-Pm-QMy" secondAttribute="bottom" id="H9f-3l-Cml"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bc6-x7-5Ls" secondAttribute="bottom" id="Nq9-bY-Tyk"/>
                             <constraint firstItem="tpO-5w-5C4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Q5m-7D-c5L"/>
+                            <constraint firstItem="ugB-Pm-QMy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UaC-1x-g89"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bc6-x7-5Ls" secondAttribute="trailing" id="VIo-7E-UlN"/>
+                            <constraint firstItem="7En-KI-7CV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VwG-YT-6gA"/>
                             <constraint firstItem="1NH-li-fQB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YGE-Ut-tka"/>
+                            <constraint firstItem="ugB-Pm-QMy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g0a-d1-CWs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1NH-li-fQB" secondAttribute="bottom" id="rBL-Z6-fKg"/>
+                            <constraint firstItem="bc6-x7-5Ls" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="349" id="rbv-EZ-rlI"/>
                             <constraint firstItem="tpO-5w-5C4" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="vs9-Fa-4qj"/>
+                            <constraint firstItem="bc6-x7-5Ls" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y0x-kL-DNq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="label" destination="tpO-5w-5C4" id="XTs-HZ-0Gm"/>
+                        <outlet property="optionButton" destination="7En-KI-7CV" id="LXv-hT-Ovp"/>
                         <outlet property="playButton" destination="zKJ-yU-cBv" id="HIV-L4-APs"/>
                         <outlet property="recordButton" destination="cxA-Nw-az7" id="jvr-1e-gZF"/>
+                        <outlet property="settingsPicker" destination="bc6-x7-5Ls" id="3wi-EY-TxA"/>
+                        <outlet property="settingsToolbar" destination="ugB-Pm-QMy" id="9sL-tO-JL5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
