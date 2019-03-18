@@ -117,7 +117,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("HELLO")
         recordButton.image = UIImage(named: "record")
         
         playButton.image = UIImage(named: "play")
